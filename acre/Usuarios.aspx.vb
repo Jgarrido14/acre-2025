@@ -128,7 +128,6 @@ Public Class Usuarios
 
     Private Sub llenaTipoTrabajador()
 
-        pnlEditar.Visible = True
         pnlGrillaUsuarios.Visible = True
         pnlUsuario.Visible = True
 
