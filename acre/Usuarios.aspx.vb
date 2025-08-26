@@ -9,6 +9,10 @@ Public Class Usuarios
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 
+        pnlEditar.Visible = False
+        pnlGrillaUsuarios.Visible = False
+        pnlUsuario.Visible = False
+
         If Session("IsLogin") = False Then
             Response.Redirect("Login.aspx")
         End If
@@ -123,6 +127,11 @@ Public Class Usuarios
 
 
     Private Sub llenaTipoTrabajador()
+
+        pnlEditar.Visible = True
+        pnlGrillaUsuarios.Visible = True
+        pnlUsuario.Visible = True
+
         ddlTipoTrabajador.Items.Clear()
         ddlTipoTrabajador.DataBind()
         ddlTipoTrabajador.Items.Insert(0, New ListItem("Desarrollador", "dev"))

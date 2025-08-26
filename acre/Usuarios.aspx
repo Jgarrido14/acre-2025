@@ -1,6 +1,19 @@
 ﻿<%@ Page Title="Usuarios" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.vb" Inherits="pasosprd.Usuarios" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+     <asp:HiddenField ID="hdnSessionVar" runat="server" />
+<script type="text/javascript">
+    var sessionValue = '<%= Session("IsLogin") %>';
+    function checkSession() {
+        if (sessionValue === '' || sessionValue === 'System.Web.SessionState.HttpSessionState' || sessionValue === False) {
+            window.location.href = 'Login.aspx';
+        }
+    }
+    window.onload = checkSession;
+</script>
+
+
     <main aria-labelledby="title">
         <h2 id="title">
             <asp:LinkButton ID="lnkVolver" runat="server">⬅️ </asp:LinkButton><%: Title %></h2>

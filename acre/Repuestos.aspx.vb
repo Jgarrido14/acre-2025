@@ -14,6 +14,9 @@ Public Class Repuestos
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         'cantRegistros = 10
+        pnlPlano.Visible = False
+        Panel1.Visible = False
+
         If Session("IsLogin") = False Then
             Response.Redirect("Login.aspx")
         End If
@@ -203,6 +206,9 @@ Public Class Repuestos
         InsertSolicitud(query)
     End Sub
     Private Sub BindGridCarrito(ByVal artic As String, ByVal un As String)
+
+        pnlPlano.Visible = True
+        Panel1.Visible = True
 
         Dim query As String = "Exec [ACRE_ListadoRepuestos_Carrito] '" & artic & "', '" & Session("User") & "', '" & Session("Usuario_cookie") & "', '" & un & "'"
         Using connection As New SqlConnection(connectionString)

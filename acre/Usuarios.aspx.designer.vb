@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Usuarios
 
     '''<summary>
+    '''Control hdnSessionVar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents hdnSessionVar As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''Control lnkVolver.
     '''</summary>
     '''<remarks>

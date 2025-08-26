@@ -35,6 +35,18 @@
 </style>
 
 
+ <asp:HiddenField ID="hdnSessionVar" runat="server" />
+<script type="text/javascript">
+    var sessionValue = '<%= Session("IsLogin") %>';
+    function checkSession() {
+        if (sessionValue === '' || sessionValue === 'System.Web.SessionState.HttpSessionState' || sessionValue === False) {
+            window.location.href = 'Login.aspx';
+        }
+    }
+    window.onload = checkSession;
+</script>
+
+
      <link rel="stylesheet" href="css/stilos.css" type="text/css" />
 
     <main aria-labelledby="title">
@@ -128,7 +140,7 @@
 </asp:UpdatePanel>
       
         <hr />
-            <asp:Panel ID="pnlPlano" runat="server">
+  <asp:Panel ID="pnlPlano" runat="server">
        <!-- Imagen pequeña a pantalla completa -->
 <!-- Imagen reducida (como vista previa) -->
 <img src="imgs/plano.png" style="width: 100%; cursor: pointer;" onclick="mostrarImagen()" />

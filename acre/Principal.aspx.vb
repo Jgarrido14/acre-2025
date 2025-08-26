@@ -61,7 +61,7 @@ Public Class Principal
                 'pnlGenerar.Visible = True
             Case 10
                 pnlPostLogin.Visible = True
-                pnlAdmin.Visible = False
+                pnlAdmin.Visible = True
                 ' pnlGenerar.Visible = True
             Case 100
                 pnlPostLogin.Visible = True
